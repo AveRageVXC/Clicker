@@ -1,0 +1,4 @@
+repository "Clicker@AveRageVXC@cloud"
+  path "/"
+    br "/main"
+    co "/main"
