@@ -18,5 +18,10 @@ namespace Core
         {
             return ResourceProductionAmount[resource].Value;
         }
+
+        public static void UpgradeProductionAmount(GameResource resource, int value)
+        {
+            ResourceProductionAmount[resource].Value += value;
+        }
     }
 }
