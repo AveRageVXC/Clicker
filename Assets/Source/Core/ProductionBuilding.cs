@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,8 @@ namespace Core
         private int _productionAmount;
         private Button _button;
         private Slider _slider;
+        private TMP_Text _buttonText;
+
         public void Awake()
         {
             _productionAmount = ResourceProductionAmounts.GetProductionAmount(_gameResource);
@@ -21,14 +24,18 @@ namespace Core
             _slider = _button.transform.GetComponentInChildren<Slider>();
             _slider.maxValue = BaseProductionTime;
             _slider.value = 0;
+
+            _buttonText = _button.transform.GetComponentInChildren<TMP_Text>();
+            _buttonText.text = $"+{_productionAmount}";
         }
-        
+
         public void Produce()
         {
             _button.interactable = false;
             StartCoroutine(AddResource());
+            _buttonText.text = $"+{_productionAmount}";
         }
-        
+
         private void Update()
         {
             if (_button.interactable) return;
