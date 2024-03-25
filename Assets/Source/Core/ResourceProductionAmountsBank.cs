@@ -6,9 +6,9 @@ namespace Core
     {
         public static Dictionary<GameResource, ObservableInt> resourceProductionAmounts = new();
 
-        public static int GetProductionAmount(GameResource resource)
+        public static ObservableInt GetProductionAmount(GameResource resource)
         {
-            return resourceProductionAmounts[resource].Value;
+            return resourceProductionAmounts[resource];
         }
 
         public static void UpgradeProductionAmount(GameResource resource, ObservableInt value)
