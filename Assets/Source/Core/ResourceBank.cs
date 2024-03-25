@@ -18,6 +18,10 @@ public static class ResourceBank
 
     public static ObservableInt GetResource(GameResource resource)
     {
+        if (!Resources.ContainsKey(resource))
+        {
+            return null;
+        }
         return Resources[resource];
     }
 }
