@@ -9,15 +9,6 @@ public static class ResourceBank
     {
         Resources.Add(resource, new ObservableInt(value));
     }
-
-    static ResourceBank()
-    {
-        AddResourceToDict(GameResource.Gold, 0);
-        AddResourceToDict(GameResource.Wood, 5);
-        AddResourceToDict(GameResource.Stone, 0);
-        AddResourceToDict(GameResource.Humans, 10);
-        AddResourceToDict(GameResource.Food, 5);
-    }
     
     public static void ChangeResource(GameResource resource, int value)
     {
