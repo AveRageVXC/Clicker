@@ -18,7 +18,7 @@ namespace Core
 
         public void Upgrade()
         {
-            ResourceProductionAmounts.UpgradeProductionAmount(_gameResource, 1);
+            ResourceProductionAmountsBank.UpgradeProductionAmount(_gameResource, new ObservableInt(1));
             _button.interactable = false;
             Invoke("ReactivateButton", _buttonCooldown);
         }

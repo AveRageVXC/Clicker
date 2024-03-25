@@ -15,7 +15,7 @@ namespace Core
         private Slider _slider;
         public void Awake()
         {
-            _productionAmount = ResourceProductionAmounts.GetProductionAmount(_gameResource);
+            _productionAmount = ResourceProductionAmountsBank.GetProductionAmount(_gameResource);
             _button = GetComponent<Button>();
             _button.onClick.AddListener(Produce);
             _slider = _button.transform.GetComponentInChildren<Slider>();
